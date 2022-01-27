@@ -78,11 +78,11 @@ void TSKLog(NSString *format, ...)
 
 + (instancetype)sharedInstance
 {
-    if (!sharedTrustKit) {
-        // TrustKit should only be initialized once so we don't double swizzle or get into anything unexpected
-        [NSException raise:@"TrustKit was not initialized"
-                    format:@"TrustKit must be initialized using +initSharedInstanceWithConfiguration: prior to accessing sharedInstance"];
-    }
+//     if (!sharedTrustKit) {
+//         // TrustKit should only be initialized once so we don't double swizzle or get into anything unexpected
+//         [NSException raise:@"TrustKit was not initialized"
+//                     format:@"TrustKit must be initialized using +initSharedInstanceWithConfiguration: prior to accessing sharedInstance"];
+//     }
     return sharedTrustKit;
 }
 
