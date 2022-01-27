@@ -68,12 +68,12 @@ NSDictionary *parseTrustKitConfiguration(NSDictionary *trustKitArguments)
     
     for (NSString *domainName in trustKitArguments[kTSKPinnedDomains])
     {
-        // Sanity checks on the domain name
-        if (GetRegistryLength([domainName UTF8String]) == 0)
-        {
-            [NSException raise:@"TrustKit configuration invalid"
-                        format:@"TrustKit was initialized with an invalid domain %@", domainName];
-        }
+//         // Sanity checks on the domain name
+//         if (GetRegistryLength([domainName UTF8String]) == 0)
+//         {
+//             [NSException raise:@"TrustKit configuration invalid"
+//                         format:@"TrustKit was initialized with an invalid domain %@", domainName];
+//         }
         
         
         // Retrieve the supplied arguments for this domain
