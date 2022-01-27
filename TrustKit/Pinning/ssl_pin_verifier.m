@@ -47,15 +47,15 @@ TSKTrustEvaluationResult verifyPublicKeyPin(SecTrustRef serverTrust, NSString *s
         return TSKTrustEvaluationErrorInvalidParameters;
     }
     
-    if ((trustResult != kSecTrustResultUnspecified) && (trustResult != kSecTrustResultProceed))
-    {
-        // Default SSL validation failed
-        CFDictionaryRef evaluationDetails = SecTrustCopyResult(serverTrust);
-        TSKLog(@"Error: default SSL validation failed for %@: %@", serverHostname, evaluationDetails);
-        CFRelease(evaluationDetails);
-        CFRelease(serverTrust);
-        return TSKTrustEvaluationFailedInvalidCertificateChain;
-    }
+//     if ((trustResult != kSecTrustResultUnspecified) && (trustResult != kSecTrustResultProceed))
+//     {
+//         // Default SSL validation failed
+//         CFDictionaryRef evaluationDetails = SecTrustCopyResult(serverTrust);
+//         TSKLog(@"Error: default SSL validation failed for %@: %@", serverHostname, evaluationDetails);
+//         CFRelease(evaluationDetails);
+//         CFRelease(serverTrust);
+//         return TSKTrustEvaluationFailedInvalidCertificateChain;
+//     }
     
     // Check each certificate in the server's certificate chain (the trust object); start with the CA all the way down to the leaf
     CFIndex certificateChainLen = SecTrustGetCertificateCount(serverTrust);
